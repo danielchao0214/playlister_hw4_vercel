@@ -1,0 +1,19 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  jest_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - name: Install Supertest
+        working-directory: ./server
+        run: npm install --save-dev supertest
+      - name: Install Jest
+        working-directory: ./server
+        run: npm install --save-dev jest
+      - name: Run Tests
+        working-directory: ./server
+        run: npm run test
