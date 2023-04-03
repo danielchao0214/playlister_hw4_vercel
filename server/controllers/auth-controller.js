@@ -4,8 +4,6 @@ const bcrypt = require('bcryptjs')
 
 getLoggedIn = async (req, res) => {
     try {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         let userId = auth.verifyUser(req);
         if (!userId) {
             return res.status(200).json({
@@ -33,8 +31,6 @@ getLoggedIn = async (req, res) => {
 }
 
 loginUser = async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     console.log("loginUser");
     try {
         const { email, password } = req.body;
@@ -78,8 +74,8 @@ loginUser = async (req, res) => {
             success: true,
             user: {
                 firstName: existingUser.firstName,
-                lastName: existingUser.lastName,
-                email: existingUser.email
+                lastName: existingUser.lastName,  
+                email: existingUser.email              
             }
         })
 
@@ -90,8 +86,6 @@ loginUser = async (req, res) => {
 }
 
 logoutUser = async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.cookie("token", "", {
         httpOnly: true,
         expires: new Date(0),
@@ -101,8 +95,6 @@ logoutUser = async (req, res) => {
 }
 
 registerUser = async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     console.log("REGISTERING USER IN BACKEND");
     try {
         const { firstName, lastName, email, password, passwordVerify } = req.body;
@@ -145,7 +137,7 @@ registerUser = async (req, res) => {
         const passwordHash = await bcrypt.hash(password, salt);
         console.log("passwordHash: " + passwordHash);
 
-        const newUser = new User({ firstName, lastName, email, passwordHash });
+        const newUser = new User({firstName, lastName, email, passwordHash});
         const savedUser = await newUser.save();
         console.log("new user saved: " + savedUser._id);
 
@@ -161,8 +153,8 @@ registerUser = async (req, res) => {
             success: true,
             user: {
                 firstName: savedUser.firstName,
-                lastName: savedUser.lastName,
-                email: savedUser.email
+                lastName: savedUser.lastName,  
+                email: savedUser.email              
             }
         })
 

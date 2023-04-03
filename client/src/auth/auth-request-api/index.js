@@ -13,7 +13,7 @@
 import axios from 'axios'
 axios.defaults.withCredentials = true;
 const api = axios.create({
-    baseURL: 'http://playlister-hw4-vercel-backend.vercel.app/auth',
+    baseURL: 'https://playlister-hw4-vercel-backend.vercel.app/auth',
 })
 
 // THESE ARE ALL THE REQUESTS WE`LL BE MAKING, ALL REQUESTS HAVE A
