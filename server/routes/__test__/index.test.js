@@ -8,5 +8,5 @@ test('testing register', async () => {
 
 test('testing login', async () => {
     const data = await request(app).post('/auth/login').send({ email: 'john2.doe@gmail.com', password: 'johndoe123' });
-    expect(data.statusCode).toEqual(200);
+    expect(data.statusCode).toEqual(200);    
 });

@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors({
     origin: ['https://playlister-hw4-vercel.vercel.app'],
     credentials: true
-}))
+}))  
 app.use(express.json())
 app.use(cookieParser())
 
@@ -22,7 +22,7 @@ app.use(cookieParser())
 const authRouter = require('./routes/auth-router')
 app.use('/auth', authRouter)
 const playlistsRouter = require('./routes/playlists-router')
-app.use('/api', playlistsRouter)
+app.use('/api', playlistsRouter) 
 
 // INITIALIZE OUR DATABASE OBJECT
 const db = require('./db')
