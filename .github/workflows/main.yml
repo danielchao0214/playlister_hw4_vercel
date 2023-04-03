@@ -9,7 +9,7 @@ jobs:
        with:
          node-version: '14'
       
-       name: Install Cypress
+     - name: Install Cypress
        working-directory: ./client
        run: npm i -D cypress
    
