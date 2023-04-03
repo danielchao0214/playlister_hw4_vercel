@@ -24,7 +24,7 @@ import {
 */
 const App = () => {   
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='/'>
             <AuthContextProvider>
                 <GlobalStoreContextProvider>              
                     <AppBanner />
