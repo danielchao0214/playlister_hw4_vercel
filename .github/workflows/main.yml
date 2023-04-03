@@ -1,10 +1,11 @@
-name: ci
-on: [push]
+name: Add Action
+on:
+ push:
+   branches:
+     - main
 jobs:
-  test:
-    # use the reusable workflow to check out the code, install dependencies
-    # and run the Cypress tests
-    # https://github.com/bahmutov/cypress-workflows
-    uses: bahmutov/cypress-workflows/.github/workflows/standard.yml@v1
-    with:
-      start: 'npm start'
+ Cypress-Test:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout GitCode
+       uses: actions/checkout@v2
