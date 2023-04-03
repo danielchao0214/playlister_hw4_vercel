@@ -121,22 +121,16 @@ registerUser = async (req, res) => {
                 })
         }
         console.log("password and password verify match");
-        return res
-                .status(200)
-                .json({
-                    success: false,
-                    errorMessage: "An account with this email address already exists."
-                })
-        const existingUser = await User.findOne({ email: email });
-        console.log("existingUser: " + existingUser);
-        if (existingUser) {
-            return res
-                .status(400)
-                .json({
-                    success: false,
-                    errorMessage: "An account with this email address already exists."
-                })
-        }
+        // const existingUser = await User.findOne({ email: email });
+        // console.log("existingUser: " + existingUser);
+        // if (existingUser) {
+        //     return res
+        //         .status(400)
+        //         .json({
+        //             success: false,
+        //             errorMessage: "An account with this email address already exists."
+        //         })
+        // }
 
         const saltRounds = 10;
         const salt = await bcrypt.genSalt(saltRounds);
