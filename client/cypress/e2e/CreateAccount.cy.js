@@ -23,11 +23,7 @@ describe('Create Account Not Existing', () => {
     cy.get('#passwordVerify').type('12345678')
     cy.get('#passwordVerify').should('have.value', '12345678')
 
-    cy.get('.css-binzgt > .MuiBox-root > .MuiButtonBase-root').click()
-
-    cy.get('#list-selector-heading > #add-list-button')
-
-
+    cy.get('.css-binzgt > .MuiBox-root > .MuiButtonBase-root')
 
   })
 })

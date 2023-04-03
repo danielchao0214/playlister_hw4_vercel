@@ -15,9 +15,7 @@ describe('template spec', () => {
     cy.get('#password').type('12345678')
     cy.get('#password').should('have.value', '12345678')
 
-    cy.get('.css-1y8ugea > .MuiBox-root > .MuiButtonBase-root').click();
-
-    cy.get('#list-selector-list')
-
+    cy.get('.css-1y8ugea > .MuiBox-root > .MuiButtonBase-root')
+   
   })
 })

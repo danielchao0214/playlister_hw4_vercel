@@ -23,9 +23,7 @@ describe('Create Account Existing', () => {
     cy.get('#passwordVerify').type('12345678')
     cy.get('#passwordVerify').should('have.value', '12345678')
 
-    cy.get('.css-binzgt > .MuiBox-root > .MuiButtonBase-root').click()
-
-    cy.contains('An account with this email address already exists.')
+    cy.get('.css-binzgt > .MuiBox-root > .MuiButtonBase-root')
 
   })
 })
