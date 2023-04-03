@@ -9,18 +9,10 @@ dotenv.config()
 const PORT = process.env.PORT || 4000;
 const app = express()
 
-
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
-
-
 // SETUP THE MIDDLEWARE
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({
-    origin: ["https://localhost:3000"],
+    origin: ["https://playlister-hw4-vercel.vercel.app"],
     credentials: true
 }))
 app.use(express.json())
