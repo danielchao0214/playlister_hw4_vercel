@@ -12,7 +12,7 @@ const app = express()
 // SETUP THE MIDDLEWARE
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({
-    origin: [process.env.FRONTEND || "http://localhost:3000"],
+    origin: ['https://playlister-hw4-vercel.vercel.app'],
     credentials: true
 }))
 app.use(express.json())

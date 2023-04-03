@@ -16,7 +16,7 @@ const dotenv = require('dotenv')
 dotenv.config();
 axios.defaults.withCredentials = true;
 const api = axios.create({
-    baseURL: process.env.AUTH_BASE || 'http://localhost:4000/auth',
+    baseURL: 'https://playlister-hw4-vercel-backend.vercel.app/auth',
 })
 
 // THESE ARE ALL THE REQUESTS WE`LL BE MAKING, ALL REQUESTS HAVE A
